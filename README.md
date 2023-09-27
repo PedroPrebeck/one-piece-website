@@ -42,13 +42,15 @@ The project follows a simple structure:
 ```plaintext
 one-piece-website/
 ├── index.html        # The main HTML file
-├── css/
-│   └── style.css     # Styles for the website
-├── images/           # Image assets
-├── js/
-│   └── script.js     # JavaScript logic (for interactivity)
+├── src/
+│   ├── css/
+│   │   └── style.css     # Styles for the website
+│   ├── images/           # Image assets
+│   └── js/
+│       └── script.js     # JavaScript logic (for interactivity)
 ├── README.md         # You are here! 😄
 └── LICENSE.md        # License information
+
 ```
 
 ## 🌟 Features
