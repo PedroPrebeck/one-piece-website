@@ -40,7 +40,7 @@ This project is a One Piece tribute website that showcases various aspects of th
 The project follows a simple structure:
 
 ```plaintext
-one-piece-tribute/
+one-piece-website/
 ├── index.html        # The main HTML file
 ├── css/
 │   └── style.css     # Styles for the website
