@@ -1,56 +1,97 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+body {
+	background-color: #000;
+	overflow: hidden;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+
+main::after {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-height: 100vh;
+	min-width: 100vw;
+	background: linear-gradient(-220deg, #000000 00%, #00000000 30%) no-repeat;
+}
+
+.character {
+	display: none;
+	height: 100vh;
+}
+
+.character.selected {
 	display: block;
 }
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+.character .image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-h2.character-name {
+.content {
+	position: absolute;
+	top: 0;
+	max-width: 24rem;
+	left: 8rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+
+	z-index: 1;
+}
+
+.content .character-name {
+	color: snow;
+	font-size: 3rem;
 	font-family: 'Secular One', sans-serif;
+	margin-bottom: 0.5em;
 }
 
-p.description {
+.content .description {
+	color: snow;
 	font-family: 'Rubik', sans-serif;
+	line-height: 1.25em;
+}
+
+.content .logo {
+	background-image: url("../images/one-piece-logo.png");
+	background-size: cover;
+	height: 100px;
+	width: 15rem;
+	margin-bottom: 2rem;
+}
+
+.buttons {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	min-width: 10rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+	background-color: #2b2d4233;
+}
+
+.buttons .button {
+	border: none;
+	background: none;
+	cursor: pointer;
+	padding: 0;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.buttons .button img {
+	border-radius: 50%;
+	transform: scale(1.1);
+}
+
+.buttons .button.selected {
+	transform: scale(1.2);
+	box-shadow: 0 0 10px #d9d9d9;
 }
